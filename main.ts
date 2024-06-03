@@ -17,6 +17,7 @@ function iclicked(){
 	  src: ["./sfx/combo_" + pressednumb + ".ogg"]
 	})
 	if (pressednumb > localStorage.pressHighscore) {
+	  document.querySelector("#youdidit").innerHTML = "YOU BROKE YOUR HIGH SCORE :D"
 	  pressHighscore = pressednumb
 	  localStorage.pressHighscore = pressednumb
 	}
