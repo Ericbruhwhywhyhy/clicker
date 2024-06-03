@@ -17,14 +17,14 @@ function iclicked(){
 	let combo = new Howl({
 	  src: ["./sfx/combo_" + pressednumb + ".ogg"]
 	})
+document.getElementById("clicknum").innerHTML = pressednumb
+combo.play()
+click.play()
 	if (pressednumb > localStorage.getItem("pressHighscore")) {
 	  document.querySelector("#youdidit").innerHTML = "YOU BROKE YOUR HIGH SCORE :D"
 	  pressHighscore = pressednumb
 	  localStorage.setItem("pressHighscore", pressednumb)
 	}
-document.getElementById("clicknum").innerHTML = pressednumb
-combo.play()
-click.play()
 if (pressednumb > 16){
 beyond16.play()
 combo.stop()
