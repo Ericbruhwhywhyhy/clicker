@@ -9,6 +9,7 @@ let click = new Howl({
   preload: true
 })
 beyond16.once("load", function(){
+  localStorage.getItem("pressHighscore")
 document.querySelector("#load").remove()
 })
 function iclicked(){
@@ -16,10 +17,10 @@ function iclicked(){
 	let combo = new Howl({
 	  src: ["./sfx/combo_" + pressednumb + ".ogg"]
 	})
-	if (pressednumb > localStorage.pressHighscore) {
+	if (pressednumb > localStorage.getItem("pressHighscore")) {
 	  document.querySelector("#youdidit").innerHTML = "YOU BROKE YOUR HIGH SCORE :D"
 	  pressHighscore = pressednumb
-	  localStorage.pressHighscore = pressednumb
+	  localStorage.setItem("pressHighscore", pressednumb)
 	}
 document.getElementById("clicknum").innerHTML = pressednumb
 combo.play()
